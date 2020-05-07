@@ -56,8 +56,7 @@
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
-      "standardx --fix",
-      "git add"
+      "standardx --fix"
     ]
   },
   "eslintConfig": {

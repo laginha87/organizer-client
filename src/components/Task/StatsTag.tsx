@@ -1,5 +1,5 @@
 import React from 'react'
-import Text from '~components/Common/Text'
+import { SmallSelect } from '~components/Inputs/SmallSelect'
 
 export const StatsTag = ({ tag, tags }) => {
   const index = tags.findIndex(({ value }) => value === tag)
@@ -7,6 +7,6 @@ export const StatsTag = ({ tag, tags }) => {
     return null
   }
 
-  const attrs = index === 2 ? { bold: true } : { light: true }
-  return <Text.Small ml='2' {...attrs}>{tag}</Text.Small>
+  // const attrs = index === 2 ? { bold: true } : { light: true }
+  return <SmallSelect value={tag} options={tags} />
 }
