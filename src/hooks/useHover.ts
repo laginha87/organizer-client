@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, RefObject } from 'react'
 
-export const useHover: <T>() => [RefObject<T>, boolean] = <T extends any>() => {
+export const useHover: () => [RefObject<HTMLElement>, boolean] = () => {
   const [value, setValue] = useState(false)
 
-  const ref = useRef<T>(null)
+  const ref = useRef<HTMLElement>(null)
 
   const handleMouseOver = () => setValue(true)
   const handleMouseOut = () => setValue(false)
