@@ -1,4 +1,4 @@
-import { Set } from 'immutable';
+import { Set } from 'immutable'
 
 export type SelectionListState = {
   selectedItems: Set<string>,
@@ -20,7 +20,6 @@ type SET = {
   type: 'SET',
   item: string
 };
-
 
 export const getInitialState: () => SelectionListState = () => ({
   selectedItems: Set<string>()

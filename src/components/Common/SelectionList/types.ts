@@ -1,7 +1,7 @@
-import { RefObject, FC } from "react";
+import { RefObject, FC } from 'react'
 
 export type WithId = {
-  id: string
+  id: string | null
 }
 
 export type Option = FC<{

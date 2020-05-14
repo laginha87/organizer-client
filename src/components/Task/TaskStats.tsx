@@ -3,6 +3,7 @@ import { useTaskEnums } from '~components/Task/useTaskEnums'
 import { Loading } from '~components/Common/Loading'
 import { StatsTag } from '~components/Task/StatsTag'
 import { TaskDetails } from '~components/Task/__generated__/TaskDetails'
+import { HorizontalList } from '~components/Common/List'
 
 interface Props {
   task: TaskDetails
@@ -21,7 +22,7 @@ export const TaskStats = ({
   return (
     <Loading
       size='small' component={() =>
-        <div className='flex -ml-2'>
+        <HorizontalList>
           {
             [
               [ickyness, ickynesses],
@@ -30,7 +31,7 @@ export const TaskStats = ({
               [dificulty, dificulties]
             ].map(([tag, tags], i) => (<StatsTag tag={tag} key={i} tags={tags} />))
           }
-        </div>} loading={isLoading}
+        </HorizontalList>} loading={isLoading}
     />
   )
 }

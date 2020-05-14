@@ -5,6 +5,7 @@ import { gql } from 'apollo-boost'
 import Task from '~components/Task/Task'
 import { getInbox } from '~components/Inbox/__generated__/getInbox'
 import BottomBar from '~components/Common/BottomBar'
+import { SelectionList } from '~components/Common/SelectionList'
 
 const getInboxQuery = gql`
   query getInbox {
@@ -22,7 +23,11 @@ export const InboxPage = () => {
       <div className='container bg-white px-16 min-h-screen mx-auto pt-12'>
         <Text.Large>Inbox</Text.Large>
 
-        {!loading && tasks!.inbox.map((task, i) => <Task task={task} key={i} />)}
+        {!loading &&
+          <SelectionList
+            options={tasks!.inbox}
+            Option={Task}
+          />}
         <BottomBar />
       </div>
     </div>)

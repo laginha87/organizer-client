@@ -1,4 +1,4 @@
-import React, { Ref } from 'react'
+import React, { RefObject } from 'react'
 import { FCWithFragment } from '~types/graphql'
 import { gql } from 'apollo-boost'
 import Text from '~components/Common/Text'
@@ -6,20 +6,20 @@ import { TaskDetails } from '~components/Task/__generated__/TaskDetails'
 import { TaskStats } from '~components/Task/TaskStats'
 
 const Task: FCWithFragment<{
-  task: TaskDetails,
-  containerRef: Ref<HTMLElement>,
+  item: TaskDetails,
+  containerRef: RefObject<HTMLElement>,
   isHovered: boolean,
   isSelected: boolean
-}> = ({ task, isHovered}) => {
-  const borderColor = isHovered ? 'gray' : 'white'
+}> = ({ item, isHovered, containerRef, isSelected }) => {
+  const borderColor = isHovered || isSelected ? 'grey' : 'white'
 
   return (
-    <div className={`pt-4 pl-2 border-l-4 border-${borderColor}`}>
+    <div className={`pt-4 pl-2 border-l-4 border-${borderColor}`} ref={containerRef as any}>
       <div className='flex items-start'>
         <div className='w-6 h-6 border-4 border-black mr-3' />
-        <div className='pb-8 border-gray border-b-2 flex-grow'>
-          <Text mb='2'>{task.title}</Text>
-          <TaskStats task={task} />
+        <div className='pb-8 border-grey border-b-2 flex-grow'>
+          <Text mb='2'>{item.title}</Text>
+          <TaskStats task={item} />
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@ const Task: FCWithFragment<{
 
 Task.fragments = gql`
   fragment TaskDetails on Task {
-          id
+    id
     dificulty
     ickyness
     duration

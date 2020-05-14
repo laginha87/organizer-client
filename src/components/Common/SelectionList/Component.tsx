@@ -1,8 +1,8 @@
-import React, { ReactElement, useReducer } from 'react';
-import { SelectionContext } from './Context';
-import { OptionWrapper } from './Option';
-import { getInitialState, SelectionListReducer } from './SelectionListReducer';
-import { Option, WithId } from './types';
+import React, { ReactElement, useReducer } from 'react'
+import { SelectionContext } from './Context'
+import { OptionWrapper } from './Option'
+import { getInitialState, SelectionListReducer } from './SelectionListReducer'
+import { Option, WithId } from './types'
 interface Props {
   options: WithId[],
   Option: Option
