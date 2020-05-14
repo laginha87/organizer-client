@@ -1,4 +1,4 @@
-import React, { ReactElement, useReducer } from 'react'
+import React, { useReducer, FC } from 'react'
 import { SelectionContext } from './Context'
 import { OptionWrapper } from './Option'
 import { getInitialState, SelectionListReducer } from './SelectionListReducer'
@@ -8,12 +8,16 @@ interface Props {
   Option: Option
 }
 
-export const SelectionList: (props: Props) => ReactElement = ({ Option, options }) => {
-  const [state, dispatch] = useReducer(SelectionListReducer, getInitialState())
+export const SelectionList: FC<Props> & { Context: FC } = ({ Option, options }) => {
+  return <>{options.map((item, i) => <OptionWrapper item={item} key={i} Option={Option} />)}</>
+}
 
+const Context: FC = ({ children }) => {
+  const [state, dispatch] = useReducer(SelectionListReducer, getInitialState())
   return (
     <SelectionContext.Provider value={{ state, dispatch }}>
-      {options.map((item, i) => <OptionWrapper item={item} key={i} Option={Option} />)}
-    </SelectionContext.Provider>
-  )
+      {children}
+    </SelectionContext.Provider>)
 }
+
+SelectionList.Context = Context
