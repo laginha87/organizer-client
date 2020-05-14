@@ -7,7 +7,8 @@
     "start-dev": "parcel src/index.html",
     "lint": "standardx '**/*.ts' '**/*.tsx'",
     "graphql-generate": "apollo client:codegen --target typescript --watch",
-    "start": "npm-run-all --parallel start-dev graphql-generate"
+    "start": "npm-run-all --parallel start-dev graphql-generate",
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
