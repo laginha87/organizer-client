@@ -80,12 +80,6 @@
   },
   "jest": {
     "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
-    "globals": {
-      "ts-jest": {
-        "useBabelrc": false,
-        "mapCoverage": true
-      }
-    }
+    "collectCoverage": true
   }
 }
