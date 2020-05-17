@@ -23,4 +23,4 @@ script:
   - yarn jest --collect-coverage
 
 after_success:
-  - ./bin/codecov -e TRAVIS_NODE_VERSION -f coverage/*.json
+  - codecov -e TRAVIS_NODE_VERSION -f coverage/*.json
