@@ -22,3 +22,4 @@ script:
   - yarn lint
   - yarn jest --collect-coverage
   - codecov
+  - cat coverage/coverage-final.json
