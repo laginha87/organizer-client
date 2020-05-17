@@ -20,9 +20,19 @@ export interface getInbox_inbox {
   description: string | null;
 }
 
+export interface getInbox_projects {
+  __typename: "Project";
+  name: string | null;
+  id: string | null;
+}
+
 export interface getInbox {
   /**
    * The inbox
    */
   inbox: getInbox_inbox[];
+  /**
+   * All the projects
+   */
+  projects: getInbox_projects[];
 }

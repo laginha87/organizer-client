@@ -1,7 +1,9 @@
 import { Set } from 'immutable'
+import { WithId } from '~components/Common/SelectionList/types'
 
 export type SelectionListState = {
   selectedItems: Set<string>,
+  options: WithId[],
 }
 
 export type SelectionListAction = ADD | REMOVE | SET
@@ -21,8 +23,9 @@ type SET = {
   item: string
 };
 
-export const getInitialState: () => SelectionListState = () => ({
-  selectedItems: Set<string>()
+export const getInitialState: (options: WithId[]) => SelectionListState = (options) => ({
+  selectedItems: Set<string>(),
+  options
 })
 
 export const SelectionListReducer: React.Reducer<SelectionListState, SelectionListAction> = (state, action) => {

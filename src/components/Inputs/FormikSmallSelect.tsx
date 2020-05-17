@@ -1,14 +1,12 @@
 import React, { useCallback } from 'react'
-import { SmallSelect } from '~components/Inputs/SmallSelect'
-import { SelectOptions } from '~types/InputTypes'
+import { SmallSelect, Props as SmallSelectProps } from '~components/Inputs/SmallSelect'
 import { useFormikContext } from 'formik'
 
-interface Props {
-  options: SelectOptions
+interface Props extends Omit<SmallSelectProps, 'value'> {
   name: string
 }
 
-const FormikSmallSelect = ({ options, name }: Props) => {
+const FormikSmallSelect = ({ options, name, ...rest }: Props) => {
   const { setFieldValue, values } = useFormikContext()
 
   const handleChange = useCallback(
@@ -18,7 +16,7 @@ const FormikSmallSelect = ({ options, name }: Props) => {
     [name]
   )
   return (
-    <SmallSelect options={options} value={values[name]} onChange={handleChange} />
+    <SmallSelect options={options} value={values[name]} onChange={handleChange} {...rest} />
   )
 }
 

@@ -3,20 +3,32 @@ import { Set } from 'immutable'
 
 import { SelectionListReducer, getInitialState } from './SelectionListReducer'
 
+const ITEMS = [{ id: '1' }, { id: '2' }, { id: '3' }]
+
+const expectSelectedItems = (initialState, operation) => {
+  const state = SelectionListReducer(initialState, operation)
+  return expect(state.selectedItems)
+}
+
+const getTestInitialState = () => {
+  return getInitialState(ITEMS)
+}
+
 describe('SelectionListReducer', () => {
   it('canAdd', () => {
-    expect(SelectionListReducer(getInitialState(), { type: 'ADD', item: '1' })).toEqual({ selectedItems: Set(['1']) })
+    expectSelectedItems(getTestInitialState(), { type: 'ADD', item: '1' }).toEqual(Set(['1']))
   })
 
   it('canRemove', () => {
-    const initialState = getInitialState()
+    const initialState = getTestInitialState()
     initialState.selectedItems = Set(['1', '2'])
-    expect(SelectionListReducer(initialState, { type: 'REMOVE', item: '2' })).toEqual({ selectedItems: Set(['1']) })
+
+    expectSelectedItems(initialState, { type: 'REMOVE', item: '2' }).toEqual(Set(['1']))
   })
 
   it('canSet', () => {
-    const initialState = getInitialState()
+    const initialState = getTestInitialState()
     initialState.selectedItems = Set(['1', '2'])
-    expect(SelectionListReducer(initialState, { type: 'SET', item: '3' })).toEqual({ selectedItems: Set(['3']) })
+    expectSelectedItems(initialState, { type: 'SET', item: '3' }).toEqual(Set(['3']))
   })
 })

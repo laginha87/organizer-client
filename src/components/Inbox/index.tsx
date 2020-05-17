@@ -1,44 +1,48 @@
-import React, { useContext } from 'react'
-import Text from '~components/Common/Text'
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
-import Task from '~components/Task/Task'
-import { getInbox } from '~components/Inbox/__generated__/getInbox'
+import React from 'react'
 import BottomBar from '~components/Common/BottomBar'
 import { SelectionList } from '~components/Common/SelectionList'
-import { SelectionContext } from '~components/Common/SelectionList/Context'
+import { useSelectedContext } from '~components/Common/SelectionList/Context'
+import Text from '~components/Common/Text'
+import { getInbox, getInbox_inbox as InboxType } from '~components/Inbox/__generated__/getInbox'
+import { EditTasks } from '~components/Task/EditTasks'
+import Task from '~components/Task/Task'
 
 const getInboxQuery = gql`
   query getInbox {
     inbox {
       ...TaskDetails
     }
+    projects {
+      name,
+      id
+    }
   }
   ${Task.fragments}
 `
 
-const InboxTasks = ({ tasks }) => {
-  const context = useContext(SelectionContext)
+const InboxTasks = ({ projects }) => {
+  const { selectedItems } = useSelectedContext<InboxType[]>()
   return (
     <>
       <SelectionList
-        options={tasks!.inbox}
         Option={Task}
       />
-      <BottomBar>{context!.state.selectedItems.toArray()}</BottomBar>
+      <BottomBar><EditTasks tasks={selectedItems as any} projects={projects} /></BottomBar>
     </>)
 }
 
 export const InboxPage = () => {
-  const { data: tasks, loading } = useQuery<getInbox>(getInboxQuery)
+  const { data, loading } = useQuery<getInbox>(getInboxQuery)
   return (
     <div className='min-h-screen w-screen bg-black'>
       <div className='container bg-white px-16 min-h-screen mx-auto pt-12'>
         <Text.Large>Inbox</Text.Large>
-
-        <SelectionList.Context>
-          {!loading && <InboxTasks tasks={tasks} />}
-        </SelectionList.Context>
+        {!loading &&
+          <SelectionList.Context options={data!.inbox}>
+            <InboxTasks projects={data!.projects} />
+          </SelectionList.Context>}
       </div>
     </div>)
 }
