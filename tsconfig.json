@@ -14,7 +14,8 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "sourceMap": true,
   },
   "include": ["./tailwind.config.js", "src/**/*"],
   "exclude": ["node_modules/"],
