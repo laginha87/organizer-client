@@ -21,5 +21,5 @@ cache:
 script:
   - yarn lint
   - yarn jest --collect-coverage
-  - codecov
-  - cat coverage/coverage-final.json
+after_success
+  - ./bin/codecov -e TRAVIS_NODE_VERSION -f coverage/*.json
