@@ -18,6 +18,6 @@
     "sourceMap": true
   },
   "include": ["./tailwind.config.js", "src/**/*"],
-  "exclude": ["node_modules/"],
+  "exclude": ["node_modules"],
   "files": ["declaration.d.ts"]
 }

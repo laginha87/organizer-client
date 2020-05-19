@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import tailwindConfig from '~/../tailwind.config'
 // export type TailwindColor = keyof typeof tailwindConfig.theme.colors;
 // export type TailwindPadding = keyof typeof tailwindConfig.theme.padding;
-// export type TailwindMargin = keyof typeof tailwindConfig.theme.margin;
+export type TailwindMargin = keyof typeof tailwindConfig.theme.margin;
 export type TailwindWidth = keyof typeof tailwindConfig.theme.width;
 // export type TailwindBorderRadius = keyof typeof tailwindConfig.theme.borderRadius;
 // export type TailwindBorderWidth = keyof typeof tailwindConfig.theme.borderWidth;
@@ -21,13 +21,13 @@ export interface TailwindPropsInner {
   // pr: TailwindPadding,
   // pt: TailwindPadding,
   // pb: TailwindPadding,
-  // m: TailwindMargin,
-  // mx: TailwindMargin,
-  // my: TailwindMargin,
-  // ml: TailwindMargin,
-  // mr: TailwindMargin,
-  // mt: TailwindMargin,
-  // mb: TailwindMargin,
+  m: TailwindMargin,
+  mx: TailwindMargin,
+  my: TailwindMargin,
+  ml: TailwindMargin,
+  mr: TailwindMargin,
+  mt: TailwindMargin,
+  mb: TailwindMargin,
   // bg: TailwindColor,
   // text: TailwindColor,
   // borderWidth: TailwindBorderWidth
@@ -44,13 +44,13 @@ const TailwindPropKeys: { [k in keyof TailwindPropsInner]: string } = {
   // pr: 'pr',
   // pt: 'pt',
   // pb: 'pb',
-  // m: 'm',
-  // mx: 'mx',
-  // my: 'my',
-  // ml: 'ml',
-  // mr: 'mr',
-  // mt: 'mt',
-  // mb: 'mb',
+  m: 'm',
+  mx: 'mx',
+  my: 'my',
+  ml: 'ml',
+  mr: 'mr',
+  mt: 'mt',
+  mb: 'mb',
   // bg: 'bg',
   // text: 'text',
   w: 'w'
