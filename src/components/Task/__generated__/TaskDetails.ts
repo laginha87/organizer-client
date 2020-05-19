@@ -11,11 +11,11 @@ import { Dificulty, Ickyness, Duration, Priority } from "./../../../../__generat
 
 export interface TaskDetails {
   __typename: "Task";
-  id: string | null;
-  dificulty: Dificulty | null;
-  ickyness: Ickyness | null;
-  duration: Duration | null;
-  priority: Priority | null;
-  title: string | null;
-  description: string | null;
+  id: string;
+  dificulty: Dificulty;
+  ickyness: Ickyness;
+  duration: Duration;
+  priority: Priority;
+  title: string;
+  description: string;
 }

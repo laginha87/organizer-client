@@ -11,7 +11,7 @@ import { CreateNewTaskMutationInput } from "./../../../../../__generated__/globa
 
 export interface CreateNewTask_createNewTask_task {
   __typename: "Task";
-  id: string | null;
+  id: string;
 }
 
 export interface CreateNewTask_createNewTask {

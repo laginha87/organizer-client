@@ -1,7 +1,7 @@
 import { RefObject, FC } from 'react'
 
 export type WithId = {
-  id: string | null
+  id: string
 }
 
 export type Option = FC<{

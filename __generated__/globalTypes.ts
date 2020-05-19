@@ -41,7 +41,7 @@ export interface CreateNewTaskMutationInput {
 
 export interface CreateTaskInput {
   title: string;
-  description: string;
+  description?: string | null;
   priority: Priority;
   duration: Duration;
   dificulty: Dificulty;

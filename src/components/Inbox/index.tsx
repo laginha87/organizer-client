@@ -27,7 +27,7 @@ const InboxTasks = ({ projects }) => {
   return (
     <>
       <SelectionList
-        Option={Task}
+        Option={Task as any}
       />
       <BottomBar><EditTasks tasks={selectedItems as any} projects={projects} /></BottomBar>
     </>)
