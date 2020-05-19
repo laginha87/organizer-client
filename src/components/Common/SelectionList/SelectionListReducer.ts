@@ -36,7 +36,5 @@ export const SelectionListReducer: React.Reducer<SelectionListState, SelectionLi
       return { ...state, selectedItems: state.selectedItems.remove(action.item) }
     case 'SET':
       return { ...state, selectedItems: Set([action.item]) }
-    default:
-      return state
   }
 }
