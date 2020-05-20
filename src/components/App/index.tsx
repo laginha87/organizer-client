@@ -1,11 +1,12 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
 import { Routes } from '~components/App/Routes'
 
-export const App = () => {
+export const App = ({ ApolloProvider, RouterProvider }) => {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <ApolloProvider>
+      <RouterProvider>
+        <Routes />
+      </RouterProvider>
+    </ApolloProvider>
   )
 }

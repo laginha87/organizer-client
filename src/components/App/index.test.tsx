@@ -1,18 +1,15 @@
 /* eslint-env jest */
 import React from 'react'
+import renderer, { act } from 'react-test-renderer'
 import { MockedProvider } from '@apollo/react-testing'
-
-import renderer from 'react-test-renderer'
-import { Routes } from '~components/App/Routes'
-import { BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
+import { App } from '~components/App'
 
 describe('App', () => {
   it('renders', () => {
-    renderer.create(
-      <MockedProvider>
-        <BrowserRouter>
-          <Routes />
-        </BrowserRouter>
-      </MockedProvider>)
+    act(() => {
+      renderer.create(<App RouterProvider={MemoryRouter} ApolloProvider={MockedProvider} />)
+    }
+    )
   })
 })

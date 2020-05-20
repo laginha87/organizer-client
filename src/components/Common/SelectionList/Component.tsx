@@ -12,7 +12,7 @@ interface ContextProps {
 }
 
 export const SelectionList: FC<Props> & { Context: FC<ContextProps> } = ({ Option }) => {
-  const { state: { options } } = useContext(SelectionContext)!
+  const { state: { options } } = useContext(SelectionContext)
   return <>{options.map((item, i) => <OptionWrapper item={item} key={i} Option={Option} />)}</>
 }
 

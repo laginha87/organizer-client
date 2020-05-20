@@ -3,6 +3,7 @@ import ApolloClient, { InMemoryCache } from 'apollo-boost'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { App } from '~components/App'
+import { BrowserRouter } from 'react-router-dom'
 
 const client = new ApolloClient({
   cache: new InMemoryCache({
@@ -11,8 +12,6 @@ const client = new ApolloClient({
 })
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+  <App ApolloProvider={({ children }) => <ApolloProvider client={client}>{children}</ApolloProvider>} RouterProvider={BrowserRouter} />,
   document.getElementById('root')
 )
