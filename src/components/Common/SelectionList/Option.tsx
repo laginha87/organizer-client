@@ -16,7 +16,7 @@ export const OptionWrapper: (props: Props) => ReactElement = ({ item, Option }) 
     (e: MouseEvent) => {
       if (isSelected) {
         dispatch({ type: 'REMOVE', item: item.id })
-      } else if (e.getModifierState('Meta')) {
+      } else if (e.metaKey) {
         dispatch({ type: 'ADD', item: item.id })
       } else {
         dispatch({ type: 'SET', item: item.id })

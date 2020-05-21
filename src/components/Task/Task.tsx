@@ -14,7 +14,7 @@ const Task: FCWithFragment<{
   const borderColor = isHovered || isSelected ? 'grey' : 'white'
 
   return (
-    <div className={`pt-4 pl-2 border-l-4 border-${borderColor}`} ref={containerRef as any}>
+    <div className={`pt-4 pl-2 border-l-4 border-${borderColor}`} ref={containerRef as any} data-testid='task-details'>
       <div className='flex items-start'>
         <div className='w-6 h-6 border-4 border-black mr-3' />
         <div className='pb-8 border-grey border-b-2 flex-grow'>

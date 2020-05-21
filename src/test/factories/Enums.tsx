@@ -15,8 +15,8 @@ const generateEnumMock = (name, options) => ({
 })
 
 export const Enums = {
-  Ickyness: generateEnumMock('Ickyness', [['chicken', 'Chicken']]),
-  Dificulty: generateEnumMock('Dificulty', [['easy', 'Chicken']]),
-  Duration: generateEnumMock('Duration', [['long', 'Chicken']]),
-  Priority: generateEnumMock('Priority', [['low', 'Chicken']])
+  Ickyness: generateEnumMock('Dificulty', [['easy', 'Easy'], ['medium', 'Medium'], ['hard', 'Hard']]),
+  Dificulty: generateEnumMock('Ickyness', [['frog', 'Frog'], ['tepid', 'Tepid'], ['chicken', 'Chicken']]),
+  Duration: generateEnumMock('Duration', [['short', 'Short'], ['normal', 'Normal'], ['long', 'Long']]),
+  Priority: generateEnumMock('Priority', [['low', 'Low'], ['medium', 'Medium'], ['high', 'High']])
 }

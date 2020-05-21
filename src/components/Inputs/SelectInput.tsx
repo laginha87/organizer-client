@@ -21,7 +21,7 @@ function SelectInput ({ name, label, options }: Props): ReactElement {
   )
 
   return (
-    <div className='w-full'>
+    <div className='w-full' data-testid={`select-${name}`}>
       <div>{label && <label htmlFor={name}>{label}</label>}</div>
       <div>
         <Field name={name}>
