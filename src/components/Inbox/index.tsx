@@ -9,7 +9,7 @@ import { getInbox, getInbox_inbox as InboxType } from '~components/Inbox/__gener
 import { EditTasks } from '~components/Task/EditTasks'
 import Task from '~components/Task/Task'
 
-const getInboxQuery = gql`
+export const GET_INBOX_QUERY = gql`
   query getInbox {
     inbox {
       ...TaskDetails
@@ -27,14 +27,16 @@ const InboxTasks = ({ projects }) => {
   return (
     <>
       <SelectionList
-        Option={Task}
+        Option={Task as any}
       />
       <BottomBar><EditTasks tasks={selectedItems as any} projects={projects} /></BottomBar>
     </>)
 }
 
 export const InboxPage = () => {
-  const { data, loading } = useQuery<getInbox>(getInboxQuery)
+  const cenas = useQuery<getInbox>(GET_INBOX_QUERY)
+  const { data, loading } = cenas
+
   return (
     <div className='min-h-screen w-screen bg-black'>
       <div className='container bg-white px-16 min-h-screen mx-auto pt-12'>

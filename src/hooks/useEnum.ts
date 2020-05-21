@@ -3,18 +3,19 @@ import { useQuery } from '@apollo/react-hooks'
 import { useMemo } from 'react'
 import { SelectOptions } from '~types/InputTypes'
 
-export const useEnum = (name: string): [SelectOptions, boolean] => {
-  const { data, loading } = useQuery<any>(gql`
+export const generateGetEnumQuery = (name) => gql`
   query GetEnums {
-      __type(name: "${name}") {
+    __type(name: "${name}") {
+      enumValues {
         name,
-        enumValues {
-          name,
-          description
-        }
+        description
       }
     }
-`)
+  }
+`
+
+export const useEnum = (name: string): [SelectOptions, boolean] => {
+  const { data, loading } = useQuery<any>(generateGetEnumQuery(name))
 
   const options = useMemo(() => {
     if (data) {

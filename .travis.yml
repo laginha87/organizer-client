@@ -19,8 +19,7 @@ cache:
   yarn: true
 
 script:
-  - yarn lint
-  - yarn jest
+  - yarn ci
 
 after_success:
   - codecov -e TRAVIS_NODE_VERSION -f coverage/*.json

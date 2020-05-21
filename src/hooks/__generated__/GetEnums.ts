@@ -15,7 +15,6 @@ export interface GetEnums___type_enumValues {
 
 export interface GetEnums___type {
   __typename: "__Type";
-  name: string | null;
   enumValues: GetEnums___type_enumValues[] | null;
 }
 
