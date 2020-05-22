@@ -3,6 +3,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   coverageDirectory: './coverage/',
   collectCoverageFrom: ['src/**/*.{tsx,ts}'],
+  setupFilesAfterEnv: ['./jest.setup.ts'],
   moduleNameMapper: {
     '^~(.*)$': '<rootDir>/src/$1',
   },

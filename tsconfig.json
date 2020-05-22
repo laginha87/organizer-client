@@ -15,9 +15,11 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "skipLibCheck": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "allowUmdGlobalAccess":true
   },
   "include": ["./tailwind.config.js", "src/**/*"],
   "exclude": ["node_modules"],
-  "files": ["declaration.d.ts"]
+  "files": ["declaration.d.ts"],
+
 }

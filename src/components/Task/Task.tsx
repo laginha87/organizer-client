@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react'
+import { RefObject } from 'react'
 import { FCWithFragment } from '~types/graphql'
 import { gql } from 'apollo-boost'
 import Text from '~components/Common/Text'

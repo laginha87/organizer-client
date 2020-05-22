@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom'
 import { App } from '~components/App'
 import { BrowserRouter } from 'react-router-dom'
 
+window.React = React
+
 const client = new ApolloClient({
   cache: new InMemoryCache({
   }),

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { Field } from 'formik'
 import { TailwindWidth, tailwindClassNames } from '~styles'
 
@@ -11,7 +11,7 @@ interface Props {
 
 function TextInput ({ name, label, placeholder, w = 'full' }: Props): ReactElement {
   return (
-    <div className={tailwindClassNames({ w })}>
+    <div className={tailwindClassNames({ w })} data-testid={`input-${name}`}>
       {label && <label htmlFor={name}>{label}</label>}
       <Field name={name}>
         {({ field, meta }) => (

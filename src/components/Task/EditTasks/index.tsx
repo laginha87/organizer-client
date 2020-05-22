@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react'
+import { FC, useMemo } from 'react'
 import { CreateTaskInput } from '__generated__/globalTypes'
 import { useTaskEnums } from '~components/Task/useTaskEnums'
 import { Loading } from '~components/Common/Loading'

@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import SelectInput from '~components/Inputs/SelectInput'
 import TextareaInput from '~components/Inputs/TextareaInput'
 import TextInput from '~components/Inputs/TextInput'

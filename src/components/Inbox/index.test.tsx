@@ -1,7 +1,3 @@
-/* eslint-env jest */
-import '@testing-library/jest-dom'
-
-import React from 'react'
 
 import { render, screen, fireEvent } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
@@ -55,8 +51,8 @@ describe('InboxPage', () => {
     fireEvent.mouseDown(tasks[0])
     fireEvent.mouseDown(tasks[1], { metaKey: true })
 
-    const ickynessSelect = screen.queryByTestId('select-ickyness')
-    const dificultySelect = screen.queryByTestId('select-dificulty')
+    const ickynessSelect = screen.queryByTestId('input-ickyness')
+    const dificultySelect = screen.queryByTestId('input-dificulty')
     expect(ickynessSelect!.querySelector('select')!.value).toBe('chicken')
     expect(dificultySelect!.querySelector('select')!.value).toBe('')
   })

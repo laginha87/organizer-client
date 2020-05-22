@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import Text from '~components/Common/Text'
 import { SelectOptions } from '~types/InputTypes'
 import { Dificulty, Priority, Duration, Ickyness } from '__generated__/globalTypes'
