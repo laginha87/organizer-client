@@ -10,8 +10,8 @@
     "start": "npm-run-all --parallel start-dev graphql-generate",
     "build": "parcel build src/index.html",
     "test": "yarn jest",
-    "coverage": "yarn jest --collect-coverage",
-    "ci": "yarn lint && npm-run-all --parallel coverage"
+    "coverage": "yarn percy exec jest --collect-coverage",
+    "ci": "yarn lint && yarn coverage"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
