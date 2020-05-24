@@ -10,9 +10,6 @@ var server = new ApolloServer({
   mocks: true,
 });
 
-server.listen({ port: 4444 }).then((args) => {
-  console.log("🚀 Server ready at " + args.url);
-});
 
 var opts = {
   env: process.env,
@@ -20,5 +17,9 @@ var opts = {
   stdio: ['inherit', process.stdout, process.stdout]
 }
 
-opts.env.NDOE_ENV = 'test'
-spawn('yarn', ['parcel', 'src/index.html', '-p', 1235 ], opts)
+opts.env.NODE_ENV = 'test'
+spawn('yarn', ['parcel', 'src/index.html', '-p', 1235], opts)
+
+server.listen({ port: 4444 }).then((args) => {
+  console.log("🚀 Server ready at " + args.url);
+});
