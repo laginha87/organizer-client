@@ -5,5 +5,6 @@ module.exports = {
   },
   server: {
     command: 'node mockServer.js',
+    launchTimeout: 50000,
   },
 };
