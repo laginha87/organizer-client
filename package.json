@@ -13,7 +13,7 @@
     "test-e2e": "yarn jest e2e/",
     "coverage-unit": "yarn test-unit --coverage",
     "coverage-e2e": "percy exec yarn test-e2e",
-    "coverage": "npm-run-all coverage-e2e coverage-unit",
+    "coverage": "percy exec yarn jest --coverage",
     "ci": "yarn lint && yarn coverage"
   },
   "dependencies": {
