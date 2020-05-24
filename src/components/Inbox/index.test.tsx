@@ -45,12 +45,11 @@ describe('InboxPage', () => {
           <InboxPage />
         </MockedProvider>)
       await new Promise(resolve => setTimeout(resolve))
+
+      const tasks = screen.queryAllByTestId('task-details')
+      fireEvent.mouseDown(tasks[0])
+      fireEvent.mouseDown(tasks[1], { metaKey: true })
     })
-
-    const tasks = screen.queryAllByTestId('task-details')
-    fireEvent.mouseDown(tasks[0])
-    fireEvent.mouseDown(tasks[1], { metaKey: true })
-
     const ickynessSelect = screen.queryByTestId('input-ickyness')
     const dificultySelect = screen.queryByTestId('input-dificulty')
     expect(ickynessSelect!.querySelector('select')!.value).toBe('chicken')

@@ -2,7 +2,7 @@ module.exports = {
   coverageDirectory: './coverage/',
   collectCoverageFrom: ['src/**/*.{tsx,ts}'],
   projects: [
-    "src/jest.config.js",
-    "e2e/jest.config.js"
+    { displayName: 'unit', setupFiles: 'src/jest.config.js' },
+    { displayName: 'e2e', setupFiles: 'e2e/jest.config.js' },
   ],
-}
+};
