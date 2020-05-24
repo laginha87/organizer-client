@@ -6,7 +6,6 @@ describe('Google', () => {
   })
 
   it('should display "inbox" text on page', async () => {
-    await page.waitForNavigation()
     await expect(page).toMatch('Inbox')
     await (global as any).snapshot('Inbox')
   })

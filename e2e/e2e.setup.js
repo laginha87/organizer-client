@@ -5,11 +5,11 @@ global.snapshot = async (title) => {
   await percySnapshot(page, title);
 };
 
-beforeAll(async () => {
-  await page.coverage.startJSCoverage();
-});
+beforeAll(() => page.coverage.startJSCoverage());
 
-afterAll(async () => {
-  const jsCoverage = await page.coverage.stopJSCoverage();
-  pti.write(jsCoverage);
+afterAll(() => {
+  return async () => {
+    const jsCoverage = await page.coverage.stopJSCoverage();
+    pti.write(jsCoverage);
+  };
 });

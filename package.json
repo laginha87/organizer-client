@@ -10,7 +10,7 @@
     "start": "npm-run-all --parallel start-dev graphql-generate",
     "build": "parcel build src/index.html",
     "test-unit": "yarn jest src/",
-    "test-e2e": "NODE_ENV=test yarn jest e2e/",
+    "test-e2e": "yarn jest e2e/",
     "coverage-unit": "yarn test-unit --coverage",
     "coverage-e2e": "percy exec yarn test-e2e",
     "coverage": "npm-run-all coverage-e2e coverage-unit",
