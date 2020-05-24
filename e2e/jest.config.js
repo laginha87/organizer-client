@@ -1,11 +1,12 @@
 const { defaults: tsjPreset } = require("ts-jest/presets");
 
 module.exports = {
-  preset: 'jest-puppeteer',
+  displayName: "e2e",
+  preset: "jest-puppeteer",
   globals: {
-    URL: "http://localhost:1235"
+    URL: "http://localhost:1235",
   },
-  setupFilesAfterEnv: ['./e2e.setup.js'],
+  setupFilesAfterEnv: ["./e2e.setup.js"],
   transform: {
     ...tsjPreset.transform,
   },
