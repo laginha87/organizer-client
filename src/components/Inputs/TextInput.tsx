@@ -11,7 +11,7 @@ interface Props {
 
 function TextInput ({ name, label, placeholder, w = 'full' }: Props): ReactElement {
   return (
-    <div className={tailwindClassNames({ w })} data-testid={`input-${name}`}>
+    <div className={tailwindClassNames({ w })} data-testId={`input-${name}`}>
       {label && <label htmlFor={name}>{label}</label>}
       <Field name={name}>
         {({ field, meta }) => (

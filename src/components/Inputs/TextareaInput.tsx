@@ -11,7 +11,7 @@ interface Props {
 
 function TextareaInput ({ name, label, placeholder, w = 'full' }: Props): ReactElement {
   return (
-    <div className='w-full' data-testid={`input-${name}`}>
+    <div className='w-full' data-testId={`input-${name}`}>
       {label && <label htmlFor={name}>{label}</label>}
       <Field name={name}>
         {({ field, meta }) => (
