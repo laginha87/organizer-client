@@ -12,7 +12,7 @@
     "test-unit": "yarn jest src/",
     "test-e2e": "yarn jest e2e/",
     "coverage-unit": "yarn test-unit --coverage",
-    "coverage-e2e": "yarn build && percy exec yarn test-e2e",
+    "coverage-e2e": "NODE_ENV=test yarn build && percy exec yarn test-e2e",
     "coverage": "npm-run-all --parallel coverage-unit coverage-e2e",
     "ci": "yarn lint && yarn coverage"
   },
