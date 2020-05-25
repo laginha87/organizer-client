@@ -17,9 +17,6 @@ var opts = {
   stdio: ['inherit', process.stdout, process.stdout]
 }
 
-opts.env.NODE_ENV = 'test'
-spawn('yarn', ['parcel', 'src/index.html', '-p', 1235], opts)
-
 server.listen({ port: 4444 }).then((args) => {
   console.log("🚀 Server ready at " + args.url);
 });

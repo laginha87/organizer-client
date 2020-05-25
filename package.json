@@ -12,8 +12,8 @@
     "test-unit": "yarn jest src/",
     "test-e2e": "yarn jest e2e/",
     "coverage-unit": "yarn test-unit --coverage",
-    "coverage-e2e": "percy exec yarn test-e2e",
-    "coverage": "yarn jest",
+    "coverage-e2e": "yarn build && percy exec yarn test-e2e",
+    "coverage": "npm-run-all --parallel coverage-unit coverage-e2e",
     "ci": "yarn lint && yarn coverage"
   },
   "dependencies": {
@@ -61,6 +61,7 @@
     "bufferutil": "4.0.1",
     "canvas": "2.5.0",
     "eslint": "6.8.0",
+    "express": "^4.17.1",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-puppeteer": "^4.4.0",
