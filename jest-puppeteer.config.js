@@ -1,6 +1,7 @@
 module.exports = {
   launch: {
-    headless: true,
+    dumpio: true,
+    headless: process.env.HEADLESS !== 'false',
     slowMo: 300,
   },
   server: [

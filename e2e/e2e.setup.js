@@ -1,5 +1,6 @@
+require('expect-puppeteer')
 const { percySnapshot } = require("@percy/puppeteer");
-const pti = require("puppeteer-to-istanbul");
+
 
 global.snapshot = async (title) => {
   await percySnapshot(page, title);
