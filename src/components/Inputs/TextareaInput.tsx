@@ -11,12 +11,13 @@ interface Props {
 
 function TextareaInput ({ name, label, placeholder, w = 'full' }: Props): ReactElement {
   return (
-    <div className='w-full' data-testId={`input-${name}`}>
+    <div className='w-full'>
       {label && <label htmlFor={name}>{label}</label>}
       <Field name={name}>
         {({ field, meta }) => (
           <div className={tailwindClassNames({ w })}>
             <textarea
+              data-testId={`input-${name}`}
               type='text' {...field} className='border border-teal-100 hover:border-teal-200 focus:border-teal-400 py-2 px-4 w-full outline-none'
               placeholder={placeholder}
             />

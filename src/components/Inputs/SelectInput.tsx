@@ -21,13 +21,13 @@ function SelectInput ({ name, label, options }: Props): ReactElement {
   )
 
   return (
-    <div className='w-full' data-testId={`input-${name}`}>
+    <div className='w-full'>
       <div>{label && <label htmlFor={name}>{label}</label>}</div>
       <div>
         <Field name={name}>
           {({ field, meta }) => (
             <>
-              <select onKeyDown={handleKeyDown} className='text-black' {...field}>
+              <select onKeyDown={handleKeyDown} className='text-black' {...field} data-testId={`input-${name}`}>
                 <option />
                 {options.map(({ value, label }) => <option value={value} key={value}>{label}</option>)}
               </select>

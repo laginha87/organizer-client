@@ -6,7 +6,9 @@ import TextareaInput from '~components/Inputs/TextareaInput'
 import { useTaskEnums } from '~components/Task/useTaskEnums'
 import { Loading } from '~components/Common/Loading'
 import SelectInput from '~components/Inputs/SelectInput'
-import { useMemo, FC } from 'react'
+import { useMemo, FC, useCallback } from 'react'
+import { useMutation } from '@apollo/react-hooks'
+import CreateProjectMutation from './CreateProjectMutation.graphql'
 
 const NewProject: FC = () => {
   const {
@@ -26,8 +28,17 @@ const NewProject: FC = () => {
     priority: !isLoading && priorities[1].value
   }), [isLoading])
 
+  const [createProject] = useMutation(CreateProjectMutation)
+
+  const handleSubmit = useCallback(
+    (project) => {
+      return createProject({ variables: { input: { project } } })
+    },
+    []
+  )
+
   return (
-    <Formik onSubmit={() => { }} initialValues={initialValues}>
+    <Formik onSubmit={handleSubmit} initialValues={initialValues}>
       <Form>
         <Text>New Project</Text>
         <TextInput name='name' label='Name:' />
@@ -42,6 +53,8 @@ const NewProject: FC = () => {
               <SelectInput name='priority' options={priorities} label='Priority' />
             </>}
         />
+
+        <button type='submit' data-testId='submit'>Submit</button>
       </Form>
     </Formik>
   )

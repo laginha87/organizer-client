@@ -1,0 +1,15 @@
+mutation CreateProject($input: CreateProjectMutationInput!) {
+  createProject(input: $input) {
+    project {
+      id
+      name
+      description
+      defaultPriority
+      defaultDuration
+      defaultDificulty
+      defaultIckyness
+      deferDate
+      dueDate
+    }
+  }
+}

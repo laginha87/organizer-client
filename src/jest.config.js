@@ -10,6 +10,9 @@ module.exports = {
   moduleNameMapper: {
     '^~(.*)$': '<rootDir>/src/$1',
   },
+  transform: {
+    "^.+\\.graphql$": "jest-transform-graphql",
+  },
   globals: {
     'ts-jest': { tsConfig: 'tsconfig.json' },
   },
