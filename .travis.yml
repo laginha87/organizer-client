@@ -22,4 +22,4 @@ script:
   - yarn ci
 
 after_success:
-  - codecov -e TRAVIS_NODE_VERSION -f coverage/*.json
+  - codecov -e TRAVIS_NODE_VERSION -f coverage/*.json -f .nyc_output/out.json

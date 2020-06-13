@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import { ReactElement } from 'react'
 import { Field } from 'formik'
 import { TailwindWidth, tailwindClassNames } from '~styles'
 
@@ -17,6 +17,7 @@ function TextInput ({ name, label, placeholder, w = 'full' }: Props): ReactEleme
         {({ field, meta }) => (
           <div className='w-full'>
             <input
+              data-testId={`input-${name}`}
               type='text' {...field} className='border border-teal-100 hover:border-teal-200 focus:border-teal-400 py-2 px-4 w-full outline-none'
               placeholder={placeholder}
             />

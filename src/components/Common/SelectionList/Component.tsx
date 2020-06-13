@@ -1,4 +1,4 @@
-import React, { useReducer, FC, useContext } from 'react'
+import { useReducer, FC, useContext } from 'react'
 import { SelectionContext } from './Context'
 import { OptionWrapper } from './Option'
 import { getInitialState, SelectionListReducer } from './SelectionListReducer'

@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { tailwindClassNames, TailwindProps } from '~styles'
 
 interface Props extends TailwindProps<never, 'mb' | 'ml'> {

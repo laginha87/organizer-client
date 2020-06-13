@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/react-hooks'
 import { gql } from 'apollo-boost'
-import React from 'react'
+
 import BottomBar from '~components/Common/BottomBar'
 import { SelectionList } from '~components/Common/SelectionList'
 import { useSelectedContext } from '~components/Common/SelectionList/Context'

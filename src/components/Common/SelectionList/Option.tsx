@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useCallback, useEffect } from 'react'
+import { ReactElement, useContext, useCallback, useEffect } from 'react'
 import { useHover } from '~hooks/useHover'
 import { Option, WithId } from './types'
 import { SelectionContext } from './Context'
